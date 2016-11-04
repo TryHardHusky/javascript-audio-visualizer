@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AudioV</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="control">
+    <button onclick="engine.spin = !engine.spin">S</button>
+</div>
+
+<audio src="public/audio/seven_years.wav" controls id="audio"></audio>
+
+<canvas id="canvas"></canvas>
+
+<script src="public/js/script.js"></script>
+<script>
+    $(window).resize(function () {
+        engine.resize();
+    });
+    $('body').on('contextmenu', '#canvas', function (e) {
+        return false;
+    });
+    $("#canvas").click(function(){
+        engine.hide = !engine.hide;
+        if(engine.hide){
+            $("#audio").hide();
+            $("#control").hide();
+        }
+        else{
+            $("#audio").show();
+            $("#control").show();
+        }
+    });
+</script>
+</body>
+</html>
