@@ -27,3 +27,192 @@ audio{
     min-width: 350px;
     width: 90%;
 }
+
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    margin: auto;
+    text-align: center;
+}
+
+/* You can get the button styles from : http://codepen.io/Codewoofy/pen/aBzBJw */
+
+.btn {
+    z-index: 1;
+    outline: none;
+    display: block;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    color: #FFF;
+    background: transparent;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    border: solid 2px transparent;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+    position: relative;
+}
+
+.btn:hover{
+    color: #333;
+}
+
+.btn:after,
+.btn:before{
+    display: block;
+    background: #FFF;
+    width: 0;
+    height: 0;
+    content: "";
+    position: absolute;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+    z-index: -1;
+}
+
+
+/* LEFT TO RIGHT */
+
+.btn.ltr:after{
+    bottom: -2px;
+    left: -2px;
+    height: 2px;
+}
+
+.btn.ltr:hover:after{
+    width: 100%;
+}
+
+/* RIGHT TO LEFT */
+
+.btn.rtl:after{
+    height: 2px;
+    bottom: -2px;
+    right: -2px;
+}
+
+.btn.rtl:hover:after{
+    width: 100%;
+}
+
+/* BOTH */
+
+.btn.efm:after{
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+}
+
+.btn.efm:hover:after{
+    width: 100%;
+}
+
+/* LEFT AND RIGHT */
+
+.btn.lar:after{
+    bottom: 0px;
+    left: 0px;
+    height: 2px;
+}
+
+.btn.lar:before{
+    top: 0px;
+    right: 0px;
+    height: 2px;
+}
+
+.btn.lar.full:before,
+.btn.lar.full:after{
+    height: 50%;
+}
+
+.btn.lar:hover:after,
+.btn.lar:hover:before{
+    width: 100%;
+}
+.btn.lar.full:hover:after,
+.btn.lar.full:hover:before{
+    width: 100%;
+}
+
+
+/* EXPAND BOTH */
+
+.btn.emb:after{
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+}
+.btn.emb:before{
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+}
+
+.btn.emb:hover:after,
+.btn.emb:hover:before{
+    width: 100%;
+}
+
+/* CLOSE BOTH */
+
+.btn.cfo:after{
+    bottom: 0;
+    left: 0;
+    height: 2px;
+}
+
+.btn.cfo:before{
+    bottom: 0;
+    right: 0;
+    height: 2px;
+}
+
+.btn.cfo:hover:after,
+.btn.cfo:hover:before{
+    width: 50%;
+}
+
+/* FULL */
+.btn.full:before,
+.btn.full:after{
+    height: 100%;
+}
+
+.btn.lar{
+    color: #3ecea7;
+}
+.btn.lar:after,
+.btn.lar:before{
+    background: #3ecea7;
+}
+
+.btn.full{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.btn.full:hover{
+    color: white;
+}

@@ -8,11 +8,14 @@
 </head>
 <body>
 
-<div id="control">
-    <button onclick="engine.spin = !engine.spin">S</button>
-</div>
+<pre class="debug"></pre>
 
-<audio src="public/audio/seven_years.wav" controls id="audio"></audio>
+<button class="btn lar" onclick="engine.next()">Next Visual</button>
+<button class="btn lar full" onclick="engine.nextsong()">Next Audio</button>
+
+<div class="loading">Loading, Please wait...</div>
+
+<audio src="public/audio/Cetus.m4a" onloadeddata="engine.loaded()" controls id="audio"></audio>
 
 <canvas id="canvas"></canvas>
 
@@ -28,11 +31,11 @@
         engine.hide = !engine.hide;
         if(engine.hide){
             $("#audio").hide();
-            $("#control").hide();
+            $("button").hide();
         }
         else{
             $("#audio").show();
-            $("#control").show();
+            $("button").show();
         }
     });
 </script>
